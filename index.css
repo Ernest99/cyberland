@@ -233,3 +233,63 @@ p.job_detail{
     outline: none;
     background: #e4e3e3;
 }
+.training{
+    padding: 20px;
+}
+.training h1{
+    text-align: center;
+    padding: 20px 0px;
+    color: #964E02;
+    font-size: 25px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #964E02;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #964E02;
+    color: #fff;
+  }
+  
+  tbody td {
+    vertical-align: middle;
+  }
+  
+  @media screen and (max-width: 600px) {
+    th, td {
+      padding: 8px;
+    }
+  }
+  footer{
+    background: #FFA970;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 25px 4%;
+  }
+  footer p{
+    padding: 25px 4%;
+  }
+
+  
+  
+  
+  
