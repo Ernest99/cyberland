@@ -8,6 +8,9 @@
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 img,video{
     width: 100%;
@@ -39,9 +42,10 @@ nav{
     align-items: center;
     justify-content: space-between;
     background: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky !important;
+    top: 0%;
+    left: 0;
+    z-index: 999;
 }
 .navlinks ul li{
     display: inline-block;
@@ -69,10 +73,10 @@ nav{
     outline: none;
     background: black;
     color: white;
+    cursor: pointer;
 }
 .video_section{
     position: relative;
-    height: 50vh;
 }
 .video_section h1{
     position: absolute;
@@ -82,4 +86,88 @@ nav{
     font-size: 4.5rem;
     color: #964E02;
     text-align: center;
+}
+.container{
+    position: absolute;
+    top: 60%;
+    padding: 20px 4%;
+    width: 100%;
+    margin: 0 auto;
+}
+.input_container{
+    width: 100%;
+    height: 80px;
+    padding: 10px 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.input_field input, .input_field textarea{
+    padding: 15px 5px;
+    border: none;
+    outline: none;
+    background: #fcfcfc;
+}
+/* About section */
+.about{
+    width: 100%;
+    height: auto;
+    background: #FFA970;
+    padding: 20px 0;
+
+}
+.aboutContainer{
+    position: relative;
+    width: 100%;
+    padding: 20px 4%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+}
+.about h1{
+    text-align: center;
+    padding: 20px 0px;
+    color: #fff;
+}
+.about p{
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+}
+.aboutItem{
+    width: 300px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: #fff;
+}
+/* Apprenticeship section */
+.apprentice{
+    width: 100%;
+    padding: 20px 4%;
+}
+.apprenContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 20px;
+}
+.apprentice h1{
+    padding: 25px 0px;
+    font-size: 25px;
+    color: #964E02;
+}
+.apprenText p{
+ line-height: 1.5;
+ font-size: 12px;
+ text-align: justify;
+
+}
+.apprenText ul{
+    padding-top: 20px;
+}
+.apprenText ul li{
+    list-style: circle;
+    font-size: 15px;
+
 }
