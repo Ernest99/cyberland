@@ -18,13 +18,14 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#apprentice">Apprenticeships</a></li>
-                <li><a href="#">Vacancies</a></li>
-                <li><a href="#">Training</a></li>
+                <li><a href="#vacancy">Vacancies</a></li>
+                <li><a href="#training">Training</a></li>
             </ul>
             <div class="right_side">
                 <input type="text" placeholder="search">
-                <button type="button">Booking</button>
+                <button type="button" id="calendar-button" onclick="displayCalendar()">Booking</button>
             </div>
+            <div id="calendar-container"></div>
         </div>
         <div class="video_section">
             <video src="./img/video_edit.mp4" muted autoplay loop></video>
@@ -87,5 +88,115 @@
             </div>
         </div>
     </section>
+    <section class="vacancy" id="vacancy">
+        <h1>Our Vacancies</h1>
+        <div class="vancancyContainer">
+            <div class="jobItem">
+                <p>Writer</p>
+                <div class="jobImg">
+                    <img src="./img/writer.jpeg" alt="">
+                </div>
+                <button>Apply Now</button>
+                <p class="job_detail">
+                    Type and write scripts and letters
+                </p>
+            </div>
+            <div class="jobItem">
+                <p>Researcher</p>
+                <div class="jobImg">
+                    <img src="./img/reseacher.jpeg" alt="">
+                </div>
+                <button>Apply Now</button>
+                <p class="job_detail">
+                    Research on current issues in the world
+                </p>
+            </div>
+            <div class="jobItem">
+                <p>Programmer</p>
+                <div class="jobImg">
+                    <img src="./img/programmer.jpeg" alt="">
+                </div>
+                <button>Apply Now</button>
+                <p class="job_detail">
+                    code in programming language like python and javascript
+                </p>
+            </div>
+        </div>
+        <div class="input_container">
+            <div class="input_field">
+                <select name="" id="">
+                    <option value="Apprenticeship Title">Apprenticeship Title</option>
+                    <option value="Apprenticeship Title">Software Development Apprenticeship</option>
+                    <option value="Apprenticeship Title">Degree Apprenticeship in Management Practice</option>
+                    <option value="Apprenticeship Title">Degree Apprenticeship in Digital and Technical Solutions</option>
+                </select>
+            </div>
+            <div class="input_field">
+                <select name="" id="">
+                    <option value="Duration">Duration</option>
+                    <option value="Duration">Approximately 12-18 months</option>
+                    <option value="Duration">Approximately 3-4 years</option>
+                    <option value="Duration">Approximately 3-4 years</option>
+                </select>
+            </div>
+            <div class="input_field">
+                <select name="" id="">
+                    <option value="Apprenticeship Level">Apprenticeship Level</option>
+                    <option value="Apprenticeship Level">Level 3</option>
+                    <option value="Apprenticeship Level">Level 6</option>
+                    <option value="Apprenticeship Level">Level 6</option>
+                </select>
+            </div>
+            
+        </div>
+    </section>
+    <section class="training" id="training">
+
+    </section>
+    <script>
+        function displayCalendar() {
+  var calendarContainer = document.getElementById("calendar-container");
+  if (calendarContainer.style.display === "none") {
+    calendarContainer.style.display = "block";
+    calendarContainer.innerHTML = createCalendar();
+  } else {
+    calendarContainer.style.display = "none";
+  }
+}
+
+function createCalendar() {
+  var calendar = "";
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = date.getMonth();
+  var daysInMonth = new Date(year, month+1, 0).getDate();
+  var firstDay = new Date(year, month, 1).getDay();
+  
+  calendar += "<table>";
+  calendar += "<tr><th colspan='7'>" + monthNames[month] + " " + year + "</th></tr>";
+  calendar += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
+  
+  var day = 1;
+  for (var i = 0; i < 6; i++) {
+    calendar += "<tr>";
+    for (var j = 0; j < 7; j++) {
+      if (i === 0 && j < firstDay) {
+        calendar += "<td></td>";
+      } else if (day > daysInMonth) {
+        calendar += "<td></td>";
+      } else {
+        calendar += "<td>" + day + "</td>";
+        day++;
+      }
+    }
+    calendar += "</tr>";
+  }
+  calendar += "</table>";
+  
+  return calendar;
+}
+
+var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    </script>
 </body>
 </html>
